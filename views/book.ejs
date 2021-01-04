@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title><%= book.title %></title>
+        <link rel="icon" type="image/png" href = "">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">   <!-- integrity and crossorigin attributes -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        
+        <style>
+            .details{
+                display: inline-block;
+            }
+            span{
+                font-size: 40px;
+            }
+            .bookk{
+                border: 1px solid black;
+                display: inline-block;
+                padding: 35px;
+            }
+            .mainb{
+                text-align: center;
+            }
+            h2{
+                font-family: 'Satisfy', cursive;
+            }
+            h3{
+                font-size: 25px;
+            }
+            #reviews{
+                text-decoration: none;
+                color: #2E9AFE;
+                font-size: 25px;
+            }
+            #reviews:hover{
+                background-color: #2E9AFE;
+                color: aliceblue;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div class="mainb">
+            <h2><%= book.title %></h2>
+            <div class="bookk">
+                <img src="images/<%= book.book_pic %>" style="width: 150px; height: 250px; display: inline-block; margin-right: 45px;">
+                <div class="details">
+                    <h3><i class="fas fa-pen-nib"></i>   <span>Author: </span><%= book.author %></h3>
+                    <h3><i class="fas fa-book"></i>   <span>Genre: </span><%= book.genre %></h3>
+                    <h3><i class="fas fa-book-open"></i>   <span>Subject: </span><%= book.subject %></h3>
+                    <h3><i class="fas fa-money-bill-wave"></i>   <span>Price: </span><%= book.price %></h3>
+                </div>
+            </div><br><br>
+            <a href="<%=book.title%>/reviews" id="reviews"><i class="fas fa-comments"></i>   See reviews. </a><br>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+    </body>
+</html>

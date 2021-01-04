@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Review</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet"> 
+        <style>
+            *{
+                font-family: 'Satisfy', cursive;
+            }
+            body{
+                background-image: url('/images/form.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #main{
+                background-color: transparent;
+                text-align: center;
+                width: 35%;
+                /*height: 95%;*/
+                border: 2px solid palegoldenrod;
+            }
+            h2{
+                color: palegoldenrod;
+                font-size: 50px;
+            }
+            label{
+                font-size: 30px;
+                color: palegoldenrod;
+            }
+            :placeholder-shown{
+                font-size: 15px;
+            }
+            a{
+                color: palegoldenrod;
+                text-decoration: none;
+                font-size: 35px;
+            }
+            a:hover{
+                color: gray;
+                background-color: palegoldenrod;
+                font-size: 40px;
+            }
+            input[type='submit']{
+                background-color: transparent;
+                color: palegoldenrod;
+                font-size: 25px;
+                border-radius: 10px;
+                width: 150px;
+            }
+            input[type='submit']:hover{
+                background-color: palegoldenrod;
+                color: gray;
+            }
+            input[type='text']{
+                font-family: 'Cinzel', serif;
+                font-size: 15px;
+            }
+            textarea{
+                font-family: 'Cinzel', serif;
+                /*font-size: 15px;*/
+                width: 90%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <h2> <%= title %></h2>
+            <form action="" method="POST">
+                <label for="name">Name</label><br>
+                <input type="text" name="name" id="name" placeholder="Enter your name here." maxlength="50" 
+                style="width: 400px; height: 30px;" required>
+                <br><br>
+                <label for="review">Write review </label><br>
+                <textarea id="review" name="review" placeholder="What do you think of this book? Share your thoughts. " 
+                cols="75" rows="10" maxlength="500"></textarea>
+                <br><br>
+                <input type="submit" name="submit" value="Add">
+            </form>
+            <a href="/<%=title%>">Go to book. </a><br>
+            <a href="/<%=title%>/reviews">Go to reviews. </a>
+        </div>
+    </body>
+</html>

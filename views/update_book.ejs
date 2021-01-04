@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title><%= book.title %></title>
+        <link rel="icon" type="image/png" href = "">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">   <!-- integrity and crossorigin attributes -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> 
+        
+        <style>
+            .details{
+                display: inline-block;
+            }
+            span{
+                font-size: 40px;
+            }
+            .bookk{
+                border: 1px solid black;
+                display: inline-block;
+                padding: 35px;
+            }
+            .mainb{
+                text-align: center;
+            }
+            h2{
+                font-family: 'Satisfy', cursive;
+            }
+            h3{
+                font-size: 25px;
+            }
+            #reviews{
+                text-decoration: none;
+                color: #2E9AFE;
+                font-size: 25px;
+            }
+            #reviews:hover{
+                background-color: #2E9AFE;
+                color: aliceblue;
+            }
+            header{
+                background-color: #2E9AFE;
+                height: 50px;
+            }
+            .btn{
+                background-color: transparent;
+                border: 2px aliceblue solid;
+                padding: 10px;
+                font-size: 20px;
+            }
+            .btn:hover{
+                background-color: aliceblue;
+                border: 2px palegoldenrod solid;
+            }
+        </style>
+    </head>
+    <body>
+        <header></header>
+        <div class="mainb">
+            <h2><%= book.title %></h2>
+            <div class="bookk">
+                <img src="/images/<%= book.book_pic %>" style="width: 150px; height: 250px; display: inline-block; margin-right: 45px;"><br>
+                <form action="" method="POST">
+                    <br><br>
+                    <label for="price"><i class="fas fa-money-bill-wave"></i>   Price   </label>
+                    <input type="text" value="<%= book.price %>" id="price" name="price">
+                    <input type="submit" value="Update" class="btn">
+                </form>
+                <br>
+                <a href="/adminmain" class="btn">Cancel </a>
+            </div><br><br>
+        </div>
+
+        <%- include('partials/footer.ejs') %>
+    </body>
+</html>

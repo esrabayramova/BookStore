@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Add new book</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+        <style>
+            *{
+                font-family: 'Cinzel', serif;
+            }
+            body{
+                text-align: center;
+                background: linear-gradient(aliceblue, #2e9afe);
+            }
+            #main{
+                border: 5px solid #2e9afe;
+                width: 35%;
+                display: inline-block;
+                margin: 35px;
+            }
+            input[type='submit'], a{
+                background-color: transparent;
+                border: 2px aliceblue solid;
+                padding: 10px;
+                font-size: 20px;
+            }
+            input[type='submit']:hover, a{
+                background-color: aliceblue;
+                border: 2px palegoldenrod solid;
+            }
+            a{
+                text-decoration: none;
+                color: #2e9afe;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h2>Add new book </h2>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label for="title">Title </label><br>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <label for="author">Author </label><br>
+                <input type="text" id="author" name="author" required><br>
+
+                <label for="genre">Genre </label><br>
+                <input type="text" id="genre" name="genre" required><br><br>
+
+                <label for="subject">Subject </label><br>
+                <input type="text" id="subject" name="subject" required><br><br>
+
+                <label for="subject">Price </label><br>
+                <input type="text" id="price" name="price" required><br><br>
+
+                <input type = "file" name="image_file" id="image_file" required><br><br>
+                <input type="submit" value="Add">
+            </form>
+            <br><br><br>
+            <a href="/adminmain">Cancel </a>
+        </div>
+    </body>
+</html>

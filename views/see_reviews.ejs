@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> <%= title %> </title>
+        <link rel="icon" type="image/png" href = "">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">   <!-- integrity and crossorigin attributes -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,wght@1,600&display=swap" rel="stylesheet"> 
+        
+        <style>
+            .container{
+                width: 65%;
+                margin: auto;
+                background-color: white;
+                opacity: 0.9;
+                padding-left: 25px;
+                padding-right: 25px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .bookreview{
+                border-bottom: silver solid 1px;
+            }
+            body{
+                background-image: url('/images/shelf.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            a:not(:last-child){
+                margin-right: 300px;
+            }
+            a{
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bolder;
+                color: black;
+            }
+            a:hover{
+                background-color: black;
+                color: palegoldenrod;
+            }
+            h1, h2, h3{
+                font-family: 'Satisfy', cursive;
+            }
+            h4, p{
+                font-family: 'Texturina', serif;
+                font-weight: 1000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+        <h1> <%= title %></h1>
+        <h2><i class="far fa-comments"></i>   Reviews</h2>
+        <h3><i class="fas fa-check"></i>   <%= numb %> reviews. </h3>
+        <% reviews.forEach( (review) => { %>
+            <div class="bookreview">
+                <h4 style="display: inline-block; font-size: 15px;"><i class="fas fa-user"></i>   <%= review.username %></h4>
+                <p style="float: right;"><i class="far fa-calendar-alt"></i>   <%= review.date_time %></p><br>
+                <p style="display: inline-block; font-size: 20px;"><i class="far fa-comment"></i>   <%= review.review %> </p>
+                <br>
+            </div>
+            <br>
+            <% }) %>
+        <a href="/<%=title%>/review">Add review. </a>
+        <a href="/<%=title%>">Go to book. </a>
+        <a href="/books">Go to books. </a>
+        </div>
+    </body>
+</html>

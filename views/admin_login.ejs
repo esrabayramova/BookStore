@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Admin login</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+        <style>
+            *{
+                font-family: 'Cinzel', serif;
+            }
+            body{
+                text-align: center;
+                background: linear-gradient(aliceblue, #2e9afe);
+            }
+            #main{
+                border: 5px solid #2e9afe;
+                width: 35%;
+                display: inline-block;
+                margin: 35px;
+            }
+            input[type='submit']{
+                background-color: transparent;
+                border: 2px aliceblue solid;
+                padding: 10px;
+                font-size: 20px;
+            }
+            input[type='submit']:hover{
+                background-color: aliceblue;
+                border: 2px palegoldenrod solid;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('partials/header.ejs') %>
+        <div id="main">
+            <h2>
+                Login as an admin
+            </h2>
+            <form action="" method="POST">
+                <label for="ad_name">Name</label><br><br>
+                <input type="text" id="ad_name" name="ad_name"><br><br><br><br>
+                <label for="ad_pass">Password</label><br><br>
+                <input type="text" id="ad_pass" name="ad_pass"><br><br><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </body>
+</html>
